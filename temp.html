@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <h3 class="banner-top">Mix & Match, gone wild</h3>
+    <div class="container">
+
+        <div class="col-sm-6" id="btn-border">
+            <button class="add-btn btn btn-info col-sm-3" data-src="Songs/Far-Col.Solo1.wav">Far - Col. Solo 1</button>
+            <button class="add-btn btn btn-success col-sm-3" data-src="Songs/Far-Col.Solo2.wav">Far - Col. Solo 2</button>
+
+        </div>
+
+        <div class="col-sm-4">
+
+            <!-- <h3 class="video-mobile-headline">Mix and Match</h3>-->
+            <!--Testing-->
+            <div class="playlist_list--song">
+                <div class="audio-container--song">
+                    <div id="controlsContainer">
+                        <audio id="audio" controls controlsList="nodownload">
+                            <source id="source" type="audio/mpeg">
+                            
+                            </source>
+                        </audio>
+                        
+                       <button id="button_song--remove"> X </button>
+                    </div>
+                </div>
+                <!--Testing - Backup below-->
+
+                <button class="main-btn btn btn-primary">Play</button>
+                <button class="stop-btn btn btn-danger">Stop</button>
+
+
+            </div>
+            <!--End vid-->
+        </div>
+    </div>
+
+
+
+    <script src="temp.js"></script>
+    <script src="cssEngine.js"></script>
+
+
+</body>
+
+</html>
+
+<!--            <div class="playlist_list--song">
+                <div class="audio-container--song">
+                    
+                </div>-->
