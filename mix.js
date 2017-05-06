@@ -14,30 +14,38 @@ function addAudio(src) {
     var source = document.createElement('source');
     var songName = document.createElement('p');
 
-    function addSongName(){
-    var x = document.getElementById("b1").name;
-    document.getElementById("demo").innerHTML = x;
-    }
+    /*    function addSongName(){
+        var song = document.getElementById("b1").getAttribute("name");
+        document.getElementById("songName").innerHTML = song;
+        return song;
+        }*/
+
     remove.className += "button_song--remove";
     remove.innerText = 'X';
     remove.addEventListener('click', removeAudio);
 
     audio.setAttribute("controls", "true");
 
-    songName.setAttribute("id", "SonName");
-    //Trying to add the name of the song --- gives you the idea of how I want it to happen.
-    //songName.innerHTML(addSongName);
+    /*
+        var bt1 = document.getElementById("b1");
+        var songname = bt1.getAttribute("name");*/
+
+
+    songName.setAttribute("id", "songName");
+    //songName.getAttribute("name");
+    //songName.setAttribute("onclick", "myFunction();");
+    //songName.innerHTML = addSongName;
+
 
     source.setAttribute("src", src);
     source.setAttribute("type", "audio/mpeg");
 
     audio.appendChild(source);
-    audio.appendChild(songName);
+    container.appendChild(songName);
     container.appendChild(audio);
     container.appendChild(remove);
     container.superAudioStuff = audio;
     audioContainer.appendChild(container);
-
 
 
     audio.load();
@@ -74,7 +82,8 @@ mainBtn.addEventListener('click', function() {
 
     playlist(test[0])
 });
-function stopPlaylist(item){
+
+function stopPlaylist(item) {
     item.pause()
 }
 stopBtn.addEventListener('click', function() {

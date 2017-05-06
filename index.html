@@ -25,8 +25,8 @@
     <div class="container">
 
         <div class="col-sm-6" id="btn-border">
-            <button class="add-btn btn btn-info col-sm-3" data-src="Songs/Far-Col.Solo1.wav">Far - Col. Solo 1</button>
-            <button class="add-btn btn btn-success col-sm-3" data-src="Songs/Far-Col.Solo2.wav">Far - Col. Solo 2</button>
+            <button class="add-btn btn btn-info col-sm-3" id="b1" data-src="Songs/Far-Col.Solo1.wav" name="Far - Col. Solo 1">Far - Col. Solo 1</button>
+            <button class="add-btn btn btn-success col-sm-3" id="b2" data-src="Songs/Far-Col.Solo2.wav" name="Far - Col. Solo 2">Far - Col. Solo 2</button>
             <button class="add-btn btn btn-danger col-sm-3" data-src="Songs/Drum.mp3">Far - Klaver Solo</button>
             <button class="add-btn btn btn-info col-sm-3" data-src="Songs/Ali.mp3">Far - Sax Solo</button>
             <button class="add-btn btn btn-success col-sm-3" data-src="Songs/Door.mp3">Far - Col. Solo 2</button>
@@ -73,7 +73,36 @@
 
     <script src="mix.js"></script>
     <script src="cssEngine.js"></script>
+    <p>Click the button to return the value of its name attribute.</p>
 
+    <button id="myBtn" name="myname" onclick="myFunction()">Try it</button>
+    <button id="myBtn2" name="myname2" onclick="myFunction()">Try it 2</button>
+
+    <p id="demo"></p>
+
+    <script>
+        /*        function myFunction() {
+                    var x = document.getElementById("b1").name;
+                    document.getElementById("songName").innerHTML = x;
+
+                    var y = document.getElementById("b2").name;
+                    document.getElementById("songName").innerHTML = y;
+                }*/
+        document.getElementById("b1").addEventListener("click", function() {
+            document.getElementById("songName").innerHTML = "Far - Col. Solo 1";
+        });
+        document.getElementById("b2").addEventListener("click", function() {
+            document.getElementById("songName").innerHTML = "Hello World1";
+        });
+
+/*        var button = document.querySelector('button[name="Far - Col. Solo 1"]');
+
+        button.addEventListener('click', function() {
+            var prentsvaedi = document.querySelector('songName');
+            prentsvaedi.innerText('Far - Col. Solo 1');
+
+        });*/
+    </script>
 
 </body>
 
