@@ -1,18 +1,27 @@
 var audioContainer = document.querySelector('.audio-container--song');
 var mainBtn = document.querySelector('.main-btn');
 var stopBtn = document.querySelector('.stop-btn');
+var clearBtn = document.querySelector('.clear-btn');
 var addBtn = document.querySelectorAll('.add-btn');
+var nowPlaying = document.getElementById('nowPlaying');
+var songName = document.getElementById('songName');
 
 var test = [];
 
 
 
-function addAudio(src) {
+function addAudio(src,name) {
+	var songInfoArray = [];
     var container = document.createElement('div');
     var remove = document.createElement('button');
     var audio = document.createElement('audio');
     var source = document.createElement('source');
     var songName = document.createElement('p');
+	var songNameSune = name;
+
+	songInfoArray[0] = audio;
+	songInfoArray[1] = source;
+	songInfoArray[2] = songNameSune;
 
     /*    function addSongName(){
         var song = document.getElementById("b1").getAttribute("name");
@@ -30,9 +39,10 @@ function addAudio(src) {
         var bt1 = document.getElementById("b1");
         var songname = bt1.getAttribute("name");*/
 
+	songName.setAttribute("id", "songName");
+	songName.innerHTML = name;
 
-    songName.setAttribute("id", "songName");
-    //songName.getAttribute("name");
+	//songName.getAttribute("name");
     //songName.setAttribute("onclick", "myFunction();");
     //songName.innerHTML = addSongName;
 
@@ -49,10 +59,10 @@ function addAudio(src) {
 
 
     audio.load();
-    test.push(audio);
+    test.push(songInfoArray);
 
     audio.addEventListener('ended', function(e) {
-        var index = test.indexOf(audio);
+        var index = test.indexOf(songInfoArray);
         if (test.length - 1 > index) {
             playlist(test[++index]);
         }
@@ -69,25 +79,36 @@ function removeAudio(e) {
     test.splice(test.indexOf(audio), 1)
 }
 
-for (var i = 0; i < 4; i++) {
-    addAudio('Songs/Drum.mp3');
-}
-
 
 function playlist(item) {
-    item.play()
+    item[0].play();
 
 }
 mainBtn.addEventListener('click', function() {
-
     playlist(test[0])
 });
 
 function stopPlaylist(item) {
-    item.pause()
+    item[0].pause()
 }
+
 stopBtn.addEventListener('click', function() {
-    stopPlaylist(test[0])
+	for(var i = 0; i< test.length;i++){
+		stopPlaylist(test[i]);
+	}
+});
+
+function clearPlaylist(item) {
+    var playlistDiv = document.querySelector('.audio-container--song');
+    while(playlistDiv.firstChild){
+        playlistDiv.removeChild(playlistDiv.firstChild);
+    }
+}
+
+clearBtn.addEventListener('click', function(){
+   for (var i = 0; i < test.length; i++) {
+   clearPlaylist(test[i])
+   }
 });
 
 
@@ -96,7 +117,7 @@ addBtn.forEach(function(btn) {
 
     btn.addEventListener('click', function(e) {
 
-        addAudio(e.target.getAttribute('data-src'));
+        addAudio(e.target.getAttribute('data-src'),e.target.getAttribute('name'));
 
 
     });

@@ -1,68 +1,52 @@
 /*BEM it up!
 
-.block {}
-.block__element {}
-.block--modifier {}
-
-*/
-
-/*.playlist_list--song {*/
-/*    position: relative;*/
-/*    padding-bottom: 56.25%;*/
-/*    padding-top: 30px;*/
-/*    height: 0;*/
-/*    overflow: hidden;*/
-/*    margin-bottom: 25px;*/
-/*}*/
-
-/*.playlist_list--song iframe,*/
-/*.playlist_list--song object,*/
-/*.playlist_list--song embed {*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*}*/
-
-/*.video-mobile-headline {*/
-/*    display: none;*/
-/*    margin: 0px;*/
-/*}*/
-
-
-/*Mobile Rendering. Add to the very end of your CSS file.*/
-
-/*@media only screen and (max-device-width: 800px),*/
-/*only screen and (device-width: 1024px) and (device-height: 600px),*/
-/*only screen and (width: 1280px) and (orientation: landscape),*/
-/*only screen and (device-width: 800px),*/
-/*only screen and (max-width: 767px) {*/
-/*    .video-container {*/
-/*        padding-bottom: 10px;*/
-/*    }*/
-/*    .flex-video {*/
-/*        padding-top: 0;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 767px) {*/
-/*    .video-mobile-headline {*/
-/*        display: block;*/
-/*    }*/
-/*}*/
-
 /*Customizing the Audio Controls*/
 
 audio::-internal-media-controls-download-button {
-    display:none;
+    display: none;
 }
 
 audio::-webkit-media-controls-enclosure {
-    overflow:hidden;
+    overflow: hidden;
 }
 
 audio::-webkit-media-controls-panel {
-    width: calc(100% + 14em); /* Adjust as needed */
+    width: calc(100% + 14em);
+    /* Adjust as needed */
 }
 
+.banner-top {
+    text-align: center
+}
+
+#btn-border {
+    border: solid 6px #ccc;
+    -moz-border-radius-topleft: 21px;
+    -moz-border-radius-topright: 21px;
+    -moz-border-radius-bottomleft: 21px;
+    -moz-border-radius-bottomright: 21px;
+    -webkit-border-top-left-radius: 21px;
+    -webkit-border-top-right-radius: 21px;
+    -webkit-border-bottom-left-radius: 21px;
+    -webkit-border-bottom-right-radius: 21px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 21px;
+    border-bottom-left-radius: 21px;
+    border-bottom-right-radius: 79px;
+}
+
+.button_padding {
+    padding-bottom: 2px;
+}
+
+.button_song--remove {
+    background-color: #d9534f;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
+    padding: 14px
+}
+
+.button_song--remove:hover {
+    background-color: #c12e2a;
+}
